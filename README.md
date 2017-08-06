@@ -22,7 +22,7 @@ GET /rates?rate_format=xml
 Host: live-rates.com
 ```
 
-## API
+## API (requires authentication)
 
 Get the available currency pairs, commodities & indexes and also when they were last updated
 
@@ -40,7 +40,7 @@ Host: live-rates.com
 
 ## Authentication
 
-We allow up to 3 hits/hour/ip for un-authententicated requests, if you need to get live rates updated every second you will need to [subscribe a licence](https://www.live-rates.com/#pricing) and include on your requests the following param:
+We allow up to 3 hits/hour/ip for un-authententicated requests, if you need to make API requests or get live rates updated every second you'll need to [subscribe a licence](https://www.live-rates.com/#pricing) and include on your requests the following param:
 
 
 ```http
