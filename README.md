@@ -1,3 +1,11 @@
+# Live-Rates.com
+
+<img src="https://www.live-rates.com/img/header-bg.jpg" alt="fixer" width=600 align="middle">
+
+Live-Rates.com is a real-time JSON / XML Webservice & API for forex, commodities and indexes.
+
+The rates are updated **every second**.
+
 # Usage
 
 ## Web-Service
@@ -32,7 +40,7 @@ GET /api/price?rate=EUR_USD,EUR_GBP
 Host: live-rates.com
 ```
 
-## Authenticate
+## Authentication
 
 We allow up to 3 hits/hour/ip for un-authententicated requests, if you need to get live rates updated every second you will need to [subscribe a licence](https://www.live-rates.com/#pricing) and include on your requests the following param:
 
