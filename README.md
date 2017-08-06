@@ -1,7 +1,5 @@
 # Live-Rates.com
 
-<img src="https://www.live-rates.com/img/header-bg.jpg" alt="fixer" width=600 align="middle">
-
 Live-Rates.com is a real-time JSON / XML Webservice & API for forex, commodities and indexes.
 
 The rates are updated **every second**.
