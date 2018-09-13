@@ -38,11 +38,11 @@ GET /api/price?rate=EUR_USD,EUR_GBP
 Host: live-rates.com
 ```
 
-## Cross-Rates
+# Cross-Rates
 
 For obvious reasons, Live-Rates don't provide all the thousands of possible cross-rate's combinations directly. All our available rates come directly from providers with real liquidity. If you need to get/calculate a rate not available directly, you can convert it, changing the base currency.
 
-# Example:
+## Example:
 MYR/CNY, MYR/GBP or any other cross-rates with base currency MYR are not provided. However that doesn't mean you can't get them. In this case/example, you can directly use the USD/MYR, and then the USD/XXX you want.
 
 {"currency":"USD/MYR","rate":”4.14611}
