@@ -1,6 +1,6 @@
 # Live-Rates.com
 
-[**Live-Rates.com**](https://www.live-rates.com/) is a real-time JSON / XML Webservice & API for forex, commodities and indexes.
+[**Live-Rates.com**](https://www.live-rates.com/) is a real-time JSON / XML Webservice & Rest API for forex, commodities and indexes. There is also a [Streaming API](#streaming-api) available for subscribers, starting in 2019.
 
 The rates are updated **every second**.
 
@@ -22,7 +22,8 @@ GET /rates?rate_format=xml
 Host: live-rates.com
 ```
 
-## API (requires authentication)
+## API 
+(requires authentication)
 
 Get the available currency pairs, commodities & indexes and also when they were last updated
 
@@ -37,6 +38,17 @@ Get the latest foreign exchange reference rates for the requested params, in JSO
 GET /api/price?rate=EUR_USD,EUR_GBP
 Host: live-rates.com
 ```
+
+## Streaming API
+(requires authentication)
+
+With streaming API, it's no longer necessary to request for fresh data every second. 
+When updated data is retrieved by the main server, it's automatically pushed to client via Web-socket technology (socket.io).
+
+Check the Streaming API [Client Example](https://github.com/Live-Rates/live-rates.com/blob/master/examples/streaming_client.js) to understand how you can use it.
+
+![streaming_api](https://thumbs.gfycat.com/MeatyThatApatosaur-small.gif)
+
 
 # Cross-Rates
 
@@ -53,7 +65,7 @@ MYR/CNY, MYR/GBP or any other cross-rates with base currency MYR are not provide
 
 ## Authentication
 
-We allow up to 3 hits/hour/ip for un-authententicated requests, if you need to make API requests or get live rates updated every second you'll need to [subscribe a licence](https://www.live-rates.com/#pricing) and include on your requests the following param:
+We allow up to 3 hits/hour/ip for un-authententicated requests, if you need to make API requests or get live rates updated every second you'll need to [subscribe a licence](https://www.live-rates.com/checkout) and include on your requests the following param:
 
 
 ```http
