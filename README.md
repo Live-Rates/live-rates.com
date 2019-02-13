@@ -45,9 +45,14 @@ Host: live-rates.com
 With streaming API, it's no longer necessary to request for fresh data every second. 
 When updated data is retrieved by the main server, it's automatically pushed to client via Web-socket technology (socket.io).
 
+The central DNS server (wss.live-rates.com) connects you to the preferred datacenter based on your location and server availability. The available servers are:
+
+* Europe: eu-wss.live-rates.com
+* America: us-wss.live-rates.com
+
 Check the Streaming API [Client Example](https://github.com/Live-Rates/live-rates.com/blob/master/examples/streaming_client.js) to understand how you can use it.
 
-![streaming_api](https://thumbs.gfycat.com/MeatyThatApatosaur-small.gif)
+![streaming_api](https://thumbs.gfycat.com/RecklessBountifulAtlanticbluetang-size_restricted.gif)
 
 
 # Cross-Rates
@@ -62,6 +67,14 @@ MYR/CNY, MYR/GBP or any other cross-rates with base currency MYR are not provide
 
 6.84/4.15 = 1.65 MYR/CNY
 
+## Multi-Region
+Live-Rates has currently multiple servers in 2 Datacenters: 
+* Europe (eu.live-rates.com)
+* America (us.live-rates.com)
+
+Requests made to live-rates.com are forwarded and resolved by our central DNS server in Europe.
+
+If you bypass the DNS server and connect directly to a specific datacenter, the connection would be faster however in case of an issue with the server, you will receive a 502 or 521 instead of a Success Response from the alternative server.
 
 ## Authentication
 
