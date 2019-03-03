@@ -22,7 +22,7 @@ GET /rates?rate_format=xml
 Host: live-rates.com
 ```
 
-## API 
+## Rest API 
 (requires authentication)
 
 Get the available currency pairs, commodities & indexes and also when they were last updated
@@ -53,6 +53,25 @@ The central DNS server (wss.live-rates.com) connects you to the preferred datace
 Check the Streaming API [Client Example](https://github.com/Live-Rates/live-rates.com/blob/master/examples/streaming_client.js) to understand how you can use it.
 
 ![streaming_api](https://thumbs.gfycat.com/RecklessBountifulAtlanticbluetang-size_restricted.gif)
+
+## Output Response
+
+All APIs - Web-Service / Rest API / Streaming API - output data with the same structure. All fields are sent in string format:
+
+```javascript
+{
+	Currency: "EUR/USD"        //Description of the Instrument 
+	Rate: "1.13625"            //Same as BID (Deprecated)
+	Bid: "1.13625"             //Bid Value of the Currency / Instrument
+	Ask: "1.13638"             //Ask Value of the Currency / Instrument
+	High: "1.14081"            //24H High of the Currency / Instrument
+	Low: "1.13527"             //24H Low of the Currency / Instrument
+	Open: "1.13725"            //Opening Value of the Daily Session / Previous Day if Market is Active
+	Close: "1.13625"           //Closing Value of the Daily Session / Previous Day if Market is Active
+	Timestamp: "1551477238763" //Timestamp of the Last Update
+}
+...
+```
 
 
 # Cross-Rates
