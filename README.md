@@ -83,8 +83,8 @@ MYR/CNY, MYR/GBP or any other cross-rates with base currency MYR are not provide
 
 ```javascript
 {
-	"currency":"USD/MYR","rate":”4.14611,
-	"currency":"USD/CNY","rate":”6.8421"
+	"currency":"USD/MYR","rate":"4.14611",
+	"currency":"USD/CNY","rate":"6.8421"
 }
 // 6.84/4.15 = 1.65 MYR/CNY
 ```
