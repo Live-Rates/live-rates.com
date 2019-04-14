@@ -50,7 +50,11 @@ The central DNS server (wss.live-rates.com) connects you to the preferred datace
 * Europe: eu-wss.live-rates.com
 * America: us-wss.live-rates.com
 
-Check the Streaming API [Client Example](https://github.com/Live-Rates/live-rates.com/blob/master/examples/streaming_client.js) to understand how you can use it.
+Check the Web-socket API examples, to understand how you can integrate and use it: 
+
+* [Node.js Example](https://github.com/Live-Rates/live-rates.com/tree/master/examples/Websocket-Streaming%20API/Node)
+* [PHP Example](https://github.com/Live-Rates/live-rates.com/tree/master/examples/Websocket-Streaming%20API/PHP)
+
 
 ![streaming_api](https://thumbs.gfycat.com/RecklessBountifulAtlanticbluetang-size_restricted.gif)
 
