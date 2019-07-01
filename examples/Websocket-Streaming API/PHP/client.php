@@ -19,13 +19,21 @@ while (true) {
     $array = json_decode(getBetween($r,"[","]"));
     $obj = json_decode($array[1]);
 
-    if (is_null($obj->currency)) {
-        print_r($array[1]);
-        print("\n");
-    } else {
+    if (!empty($obj->currency)) {
 
-        echo("Instrument: {$obj->currency} | Ask: {$obj->ask} | Bid: {$obj->bid}");
+        print_r("Instrument: {$obj->currency} | Ask: {$obj->ask} | Bid: {$obj->bid}");
         print("\n");
+    } else if (!empty($array[1])) {
+
+      echo($array[1]);
+
+      if ($array[1] == "Key Already Connected to Streaming Feed.. Disconnected!") {
+        print("\n");
+        $client->close();
+        exit(0);
+      }
+
+      print("\n");
     }
 }
 
