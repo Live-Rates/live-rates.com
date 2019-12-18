@@ -1,11 +1,8 @@
 <?php
 
-
 use ElephantIO\Client;
 use ElephantIO\Engine\SocketIO\Version2X;
-
 require __DIR__ . '/vendor/autoload.php';
-
 
 
 $client = new Client(new Version2X('https://wss.live-rates.com/'));
@@ -17,28 +14,32 @@ while (true) {
     $r = $client->read();
 
     $array = json_decode(getBetween($r,"[","]"));
-    $obj = json_decode($array[1]);
 
-    if (!empty($obj->currency)) {
 
-        print_r("Instrument: {$obj->currency} | Ask: {$obj->ask} | Bid: {$obj->bid}");
-        print("\n");
-    } else if (!empty($array[1])) {
 
-      echo($array[1]);
+    $obj = $array[1];
 
-      if ($array[1] == "Key Already Connected to Streaming Feed.. Disconnected!") {
-        print("\n");
+    if ($array[0] == 'rates') {
+
+      if (!empty($array[1]->error)) {
+        print_r($array[1]->error);
         $client->close();
         exit(0);
+      } else {
+
+        if (!empty($obj->info)){
+          print_r($obj->info);
+          print("\n");
+        } else {
+          print_r($array[1]);
+          print("\n");
+        }
+
       }
-
-      print("\n");
     }
-}
+  }
 
-$client->close();
-
+  $client->close();
 
 
 function getBetween($string, $start = "", $end = ""){
