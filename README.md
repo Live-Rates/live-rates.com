@@ -49,6 +49,7 @@ The central DNS server (wss.live-rates.com) connects you to the preferred datace
 
 * Europe: eu-wss.live-rates.com
 * America: us-wss.live-rates.com
+* Asia (**new**): as-wss.live-rates.com
 
 Check the Web-socket API examples, to understand how you can integrate and use it: 
 
@@ -94,9 +95,10 @@ MYR/CNY, MYR/GBP or any other cross-rates with base currency MYR are not provide
 ```
 
 # Multi-Region
-Live-Rates has currently multiple servers in 2 Datacenters: 
-* Europe (eu.live-rates.com)
-* America (us.live-rates.com)
+Live-Rates has currently multiple servers in 3 Datacenters: 
+* Europe: (eu.live-rates.com)
+* America: (us.live-rates.com)
+* Asia (**new**): (as.live-rates.com)
 
 Requests made to live-rates.com are forwarded and resolved by our central DNS server in Europe.
 
