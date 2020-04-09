@@ -1,4 +1,3 @@
-#pip install socketio
 #pip install "python-socketio[client]"
 
 sio = socketio.Client(ssl_verify=False)
