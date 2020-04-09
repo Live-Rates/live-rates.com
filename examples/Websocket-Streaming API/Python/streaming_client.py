@@ -1,5 +1,18 @@
 #pip install "python-socketio[client]"
 
+import socketio
+import json
+
+def is_json(myjson):
+    try:
+        json_object = json.loads(myjson)
+    except ValueError as e:
+        return False
+    return True
+
+## USE THIS LIST TO FILTER AND RECEIVE ONLY INSTRUMENTS YOU NEED. LEAVE EMPTY TO RECEIVE ALL
+instruments = ['EURUSD', 'USDJPY', 'BTCUSD', 'ETH']
+
 sio = socketio.Client(ssl_verify=False)
 
 @sio.event
@@ -8,7 +21,19 @@ def connect():
 
 @sio.event
 def rates(rates):
-    print(rates)
+	try:
+		instr = json.loads(rates)
+		if instruments:
+
+			if instr['currency'] in instruments:
+				print(instr)
+		else:
+			print('error')
+			print(instr)
+
+
+	except:
+	  	print(rates)
 
 
 @sio.event
