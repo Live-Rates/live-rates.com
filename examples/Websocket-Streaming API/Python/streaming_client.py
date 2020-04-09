@@ -3,13 +3,6 @@
 import socketio
 import json
 
-def is_json(myjson):
-    try:
-        json_object = json.loads(myjson)
-    except ValueError as e:
-        return False
-    return True
-
 ## USE THIS LIST TO FILTER AND RECEIVE ONLY INSTRUMENTS YOU NEED. LEAVE EMPTY TO RECEIVE ALL
 instruments = ['EURUSD', 'USDJPY', 'BTCUSD', 'ETH']
 
