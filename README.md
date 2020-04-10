@@ -22,22 +22,26 @@ GET /rates?rate_format=xml
 Host: live-rates.com
 ```
 
+---
+
 ## Rest API 
 (requires authentication)
 
 Get the available currency pairs, commodities & indexes and also when they were last updated
 
 ```http
-GET /api/rates
+GET /api/rates&key=YOUR_KEY
 Host: live-rates.com
 ```
 
 Get the latest foreign exchange reference rates for the requested params, in JSON format.
 
 ```http
-GET /api/price?rate=EUR_USD,EUR_GBP
+GET /api/price?rate=EUR_USD,EUR_GBP&key=YOUR_KEY
 Host: live-rates.com
 ```
+
+---
 
 ## Streaming API
 (requires authentication)
@@ -60,7 +64,11 @@ Check the Web-socket API examples, to understand how you can integrate and use i
 
 ![streaming_api](https://thumbs.gfycat.com/RecklessBountifulAtlanticbluetang-size_restricted.gif)
 
-## Output Response
+
+---
+
+
+### Output Response
 
 All APIs - Web-Service / Rest API / Streaming API - output data with the same structure. All fields are sent in string format:
 
@@ -79,6 +87,48 @@ All APIs - Web-Service / Rest API / Streaming API - output data with the same st
 ...
 ```
 
+
+---------
+
+
+# Historical Data
+(requires authentication)
+
+Live-Rates Provides Historical Data for a Limited number of Instruments (+-170). At the moment only Forex Currencies, Metals and Crypto are Available. All Endpoints Require Authentication.
+
+## List Available Instruments
+
+This will Output all Available Instruments
+
+```http
+GET /historical/list?key=YOUR_KEY
+Host: live-rates.com
+```
+
+## Get Instrument Price on a Specific Previous Day
+
+This Endpoint will provide the closing Price for the required day (23:59:59 UTC Time).
+
+You can provide the Optional parameter *symbols* if you only need specific Pairs.
+
+```http
+GET /historical?base=EUR&date=YYYY-MM-DD&symbols=USD&key=YOUR_KEY
+Host: live-rates.com
+```
+
+
+## Get Series Data for a Base Instrument
+
+This Endpoint will provide the rates for a given past time period that cannot be longer than **30 Days**.
+
+You can provide the Optional parameter *symbols* if you only need specific Pairs.
+
+```http
+GET /historical/series?base=EUR&start=YYYY-MM-DD&end=YYYY-MM-DD&symbols=USD&key=YOUR_KEY
+Host: live-rates.com
+```
+
+----
 
 # Cross-Rates
 
@@ -104,6 +154,11 @@ Live-Rates has currently multiple servers in 3 Datacenters:
 Requests made to live-rates.com are forwarded and resolved by our central DNS server in Europe.
 
 If you bypass the DNS server and connect directly to a specific datacenter, the connection would be faster however in case of an issue with the server, you will receive a 502 or 521 instead of a Success Response from the alternative server.
+
+
+
+----
+
 
 # Authentication
 
