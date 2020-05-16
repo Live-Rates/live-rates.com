@@ -10,20 +10,16 @@ sio = socketio.Client(ssl_verify=False)
 
 @sio.event
 def connect():
-    sio.emit('key', 'trial')
+	sio.emit('key', 'trial')
+
+	#if you want to subscribe only specific instruments, emit instruments. To receive all instruments, comment the line below.
+	sio.emit('instruments', instruments);
 
 @sio.event
 def rates(rates):
 	try:
 		instr = json.loads(rates)
-		if instruments:
-
-			if instr['currency'] in instruments:
-				print(instr)
-		else:
-			print('error')
-			print(instr)
-
+		print(instr)
 
 	except:
 	  	print(rates)
