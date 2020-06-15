@@ -3,16 +3,19 @@
 import socketio
 import json
 
-## USE THIS LIST TO FILTER AND RECEIVE ONLY INSTRUMENTS YOU NEED. LEAVE EMPTY TO RECEIVE ALL
-instruments = ['EURUSD', 'USDJPY', 'BTCUSD', 'ETH']
+
 
 sio = socketio.Client(ssl_verify=False)
 
 @sio.event
 def connect():
+	#Use the 'trial' as key to establish a 2-minute streaming connection with real-time data.
+	#After the 2-minute test, the server will drop the connection and block the IP for an Hour.
 	sio.emit('key', 'trial')
-
-	#if you want to subscribe only specific instruments, emit instruments. To receive all instruments, comment the line below.
+	
+	## USE THIS LIST TO FILTER AND RECEIVE ONLY INSTRUMENTS YOU NEED. LEAVE EMPTY TO RECEIVE ALL
+	#if you want to subscribe only specific instruments, emit instruments. To receive all instruments, comment the lines below.
+	instruments = ['EURUSD', 'USDJPY', 'BTCUSD', 'ETH']
 	sio.emit('instruments', instruments);
 
 @sio.event
