@@ -30,7 +30,7 @@ Host: live-rates.com
 Get the available currency pairs, commodities & indexes and also when they were last updated
 
 ```http
-GET /api/rates&key=YOUR_KEY
+GET /api/rates?key=YOUR_KEY
 Host: live-rates.com
 ```
 
