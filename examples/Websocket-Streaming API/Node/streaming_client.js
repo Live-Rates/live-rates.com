@@ -1,3 +1,9 @@
+/*        
+Please install socket.io-client V2.3.1:
+npm i socket.io-client@2.3.1
+Version 3 introduduced breaking changes that are incompatible with our server running V2
+*/
+
 const io = require('socket.io-client');
 const socket = io('https://wss.live-rates.com/')
 
