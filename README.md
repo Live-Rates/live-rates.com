@@ -49,11 +49,17 @@ Host: live-rates.com
 With streaming API, it's no longer necessary to request for fresh data every second. 
 When updated data is retrieved by the main server, it's automatically pushed to client via Web-socket technology (socket.io).
 
-The central DNS server (wss.live-rates.com) connects you to the preferred datacenter based on your location and server availability. The available servers are:
+The central DNS server (wss.live-rates.com) connects you to the preferred datacenter based on your location and server availability. The available local servers are:
 
-* Europe: eu-wss.live-rates.com
-* America: us-wss.live-rates.com
-* Asia (**new**): as-wss.live-rates.com
+| Location | Socket Address | (*) Socket V3 Address
+| --- | --- | --- |
+| Router Server | wss.live-rates.com | wss3.live-rates.com |
+| Europe | eu-wss.live-rates.com | eu-wss3.live-rates.com |
+| US | us-wss.live-rates.com | us-wss3.live-rates.com |
+| Asia | as-wss.live-rates.com | as-wss3.live-rates.com |
+
+
+(*) Required for new client version of socketio (3.xx)
 
 Check the Web-socket API examples, to understand how you can integrate and use it: 
 
