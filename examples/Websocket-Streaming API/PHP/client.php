@@ -8,6 +8,8 @@ require __DIR__ . '/vendor/autoload.php';
 $client = new Client(new Version2X('https://wss.live-rates.com/'));
 
 $client->initialize();
+
+//$client->emit('instruments', ['BTCUSD','LTCUSD']);
 $client->emit('key', ['key' => 'trial']);
 
 while (true) {
