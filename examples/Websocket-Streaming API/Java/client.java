@@ -18,13 +18,14 @@ socket.on("connect", new Emitter.Listener() {
 });
 
 
-socket.on("rates", function(msg) {
-
-  //Do what you want with the Incoming Rates... Enjoy!
-  try {
-    System.out.println(msg);
-  } catch (e) {
-    System.out.println(e);
+socket.on("rates", new Emitter.Listener() {
+  @Override
+  public void call(Object... args) {
+    //Do what you want with the Incoming Rates... Enjoy!
+    try {
+      System.out.println(args);
+    } catch (e) {
+      System.out.println(e);
+    }
   }
-
 });
