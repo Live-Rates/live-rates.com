@@ -64,6 +64,7 @@ The central DNS server (wss.live-rates.com) connects you to the preferred datace
 Check the Web-socket API examples, to understand how you can integrate and use it: 
 
 * [Node.js / Javascript Example](https://github.com/Live-Rates/live-rates.com/tree/master/examples/Websocket-Streaming%20API/Node)
+* [Java Example](https://github.com/Live-Rates/live-rates.com/blob/master/examples/Websocket-Streaming%20API/Java/client.java)
 * [Python Example](https://github.com/Live-Rates/live-rates.com/blob/master/examples/Websocket-Streaming%20API/Python/streaming_client.py)
 * [PHP Example](https://github.com/Live-Rates/live-rates.com/tree/master/examples/Websocket-Streaming%20API/PHP)
 * [Microsoft / C# Example](https://github.com/Live-Rates/live-rates.com/tree/master/examples/Websocket-Streaming%20API/C%23)
