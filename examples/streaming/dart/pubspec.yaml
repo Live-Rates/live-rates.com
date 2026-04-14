@@ -1,0 +1,7 @@
+name: liverates_streaming_dart_example
+description: Live-Rates streaming client example (Dart / Flutter).
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+dependencies:
+  socket_io_client: ^3.0.2

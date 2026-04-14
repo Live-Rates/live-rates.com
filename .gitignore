@@ -1,0 +1,36 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# Java
+*.class
+target/
+build/
+.gradle/
+
+# PHP
+vendor/
+composer.phar
+
+# C# / .NET
+bin/
+obj/
+*.user
+
+# Go
+*.exe
+*.test
+
+# Editors / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store

@@ -1,0 +1,8 @@
+{
+  "name": "live-rates/streaming-php-example",
+  "description": "Live-Rates streaming client example (PHP).",
+  "require": {
+    "php": ">=8.1",
+    "elephant.io/elephant.io": "^5.0"
+  }
+}
